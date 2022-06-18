@@ -1,0 +1,116 @@
+:root {
+  --color-accent: rgb(123 157 213, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  width: 1em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.25;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+input {
+  padding: 0.5em;
+  border-radius: 10px;
+  border: none;
+  background-color: lightgrey;
+}
+
+h1 {
+  font-size: 1.875rem;
+  margin-bottom: 0.5em;
+}
+
+div.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 25px auto 50px auto;
+}
+
+section.table-container {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  max-width: 150px;
+  align-self: flex-end;
+}
+
+table {
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 1rem;
+  background-color: rgb(224, 224, 224);
+  filter: drop-shadow(2px 2px 3px grey);
+  td,
+  th {
+    padding: 1em 1.5em;
+    &:last-child {
+      border: none;
+    }
+  }
+
+  thead {
+    th {
+      background-color: var(--color-accent);
+      > div {
+        display: flex;
+        span {
+          margin-right: 0.25em;
+          color: rgba(34, 34, 34, 1);
+        }
+        div.sort-btns {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          height: 1em;
+          align-items: center;
+          justify-content: center;
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            height: 100%;
+            margin: 0 0.2em;
+            opacity: 0.25;
+            &.active {
+              opacity: 1 !important;
+            }
+            svg {
+              width: 1em;
+            }
+            &:first-child {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  tbody {
+    tr:nth-child(odd) {
+      background-color: white;
+    }
+  }
+}
